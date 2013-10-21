@@ -16,5 +16,12 @@ describe "String" do
         expect(text.to_left2right2right2left).to eql("「はちにんこ」")
       end
     end
+
+    context "with line feed code" do
+      let(:text) { "おはよう\nこんにちは\nこんばんは" }
+      it "should not change the order" do
+        expect(text.to_left2right2right2left).to eql("うよはお\nはちにんこ\nはんばんこ")
+      end
+    end
   end
 end
