@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    title
+      | left to right to right to left
+    meta name="keywords" content="template language"
+    link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+
+  body style="padding-top: 80px;"
+    .container
+      h1
+        | left to right to right to left
+      .row
+        form action="/convert" method="post"
+          .form-group
+            textarea name="text" style="width: 100%" rows="10"
+          .form-group
+            button.btn.btn-success
+              | covert
+      .row
+        - if @text
+          pre
+            = @text
